@@ -47,7 +47,8 @@ npm install
 ```
 
 **Run**
-This should be runned once a day, every day, after lunch
+
+This should be runned once a day, every day, after lunch **or** setup a [cronjob](https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/) that runs it for you every day
 ```sh
 node index.js
 ```
