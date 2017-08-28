@@ -1,4 +1,4 @@
-## Bitcoin trading using Dollar Cost Averaging strategy
+## Bitcoin investing using Dollar Cost Averaging strategy
 
 This node script let you set a daily amount to invest on crypto currency (Bitcoin in this case) via the [kraken crypto exchange](https://kraken.com).
 
