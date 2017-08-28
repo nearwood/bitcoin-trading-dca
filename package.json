@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/0x13a/bitcoint-trading-dca.git"
+    "url": "git+ssh://git@github.com/0x13a/bitcoin-trading-dca.git"
   },
   "keywords": [
     "bitcoin",
@@ -23,9 +23,9 @@
   "author": "Diego Mariani <diego.mariani@mail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/0x13a/bitcoint-trading-dca/issues"
+    "url": "https://github.com/0x13a/bitcoin-trading-dca/issues"
   },
-  "homepage": "https://github.com/0x13a/bitcoint-trading-dca#readme",
+  "homepage": "https://github.com/0x13a/bitcoin-trading-dca#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
     "kraken-api": "^1.0.0"
