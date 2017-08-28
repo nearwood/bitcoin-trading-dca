@@ -46,6 +46,8 @@ git clone github.com/0x13a/bitcoin-trading-dca && cd bitcoin-trading-dca
 npm install
 ```
 
+**Run**
+This should be runned once a day, every day, after lunch
 ```sh
 node index.js
 ```
