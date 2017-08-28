@@ -28,7 +28,7 @@ INVESTMENT_AMOUNT=11.11
 
 In order to make it work you will need
 
-- A bitcoin wallet obviously. I've used a desktop/paper wallet [Electrum](electrum.org)
+- A bitcoin wallet obviously. I've used a desktop/paper wallet [Electrum](https://electrum.org)
 - A way to exchange EUR with Bitcoins and other crypto-currencies. This repo uses [Kraken Exchange](https://kraken.com)
 - [node.js 8](https://nodejs.org)
 - [npm](https://www.npmjs.com/)
