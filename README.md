@@ -10,8 +10,8 @@ Dollar Cost Averaging has being initially used in the stock market to pursue an 
 
 In the case of crypto-currency is well known that the volatility of those assets is way higher than the traditional shares purchased in the stock market. This makes the Dollar Cost Averaging strategy well suited for this type of investments.
 
-### How you should chose investment amount and range
-This highly depends on your risk level, in my case what I've done is setting up a total investment amount.
+### How you should choose investment amount and range
+This highly depends on your risk level, in my case what I've done is set up a total investment amount.
 Let's say I want to invest 1000$ and I want to spread my investment for 3 months. I also know I want to invest daily to take advantage of the volatility of the bitcoin against the dollar.
 
 > 1000 / (3 * 30) = 1000 / 90 = ~11$ / day
