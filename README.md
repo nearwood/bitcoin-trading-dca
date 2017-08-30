@@ -22,6 +22,7 @@ I will then setup my `.env` file
 KRAKEN_KEY=myKrakenKeyHere
 KRAKEN_SECRET=myKrakenSecretKeyHere
 INVESTMENT_AMOUNT=11.11
+ASSETS_PAIR=XXBTZEUR
 ```
 
 ### Pre-requisites
