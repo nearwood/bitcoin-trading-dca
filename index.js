@@ -1,14 +1,12 @@
 require('dotenv').config();
 
-const Kraken = require('kraken-api');
+
+const Coinbase = require('coinbase');
 const fs = require('fs');
 const util = require('util');
 const timestamp = () => new Date().toISOString();
 
-// set an higher timeout
-const client = new Kraken(process.env.KRAKEN_KEY, process.env.KRAKEN_SECRET, {
-    timeout: 60 * 60 * 48 * 1000
-});
+const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET});
 
 const investmentAmount = process.env.INVESTMENT_AMOUNT;
 // see full list of exhange pairs here
