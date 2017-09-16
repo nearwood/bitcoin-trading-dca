@@ -1,6 +1,10 @@
 ## Bitcoin investing using Dollar Cost Averaging strategy
 
-This node script let you set a daily amount to invest on crypto currency (Bitcoin in this case) via the [kraken crypto exchange](https://kraken.com).
+Based off of: [0x13a's original Kraken version](https://github.com/0x13a/bitcoin-trading-dca)
+
+This version uses Coinbase's API.
+
+This node script let you set a daily amount to invest on crypto currency (Bitcoin in this case) via the [Coinbase crypto exchange](https://coinbase.com).
 
 ### Dollar Cost Averaging
 
@@ -19,10 +23,10 @@ Let's say I want to invest 1000$ and I want to spread my investment for 3 months
 I will then setup my `.env` file
 
 ```sh
-KRAKEN_KEY=myKrakenKeyHere
-KRAKEN_SECRET=myKrakenSecretKeyHere
+API_KEY=myCoinbaseKeyHere
+API_SECRET=myCoinbaseSecretHere
 INVESTMENT_AMOUNT=11.11
-ASSETS_PAIR=XXBTZEUR
+ASSETS_PAIR=BTC-USD
 ```
 
 ### Pre-requisites
@@ -30,16 +34,16 @@ ASSETS_PAIR=XXBTZEUR
 In order to make it work you will need
 
 - A bitcoin wallet obviously. I've used a desktop/paper wallet [Electrum](https://electrum.org)
-- A way to exchange EUR with Bitcoins and other crypto-currencies. This repo uses [Kraken Exchange](https://kraken.com)
+- A way to exchange EUR with Bitcoins and other crypto-currencies. This repo uses [Coinbase](https://coinbase.com)
 - [node.js 8](https://nodejs.org)
 - [npm](https://www.npmjs.com/)
 
 ### Getting started
-Once you have registered your bitcoin wallet, you have your kraken account with enough funds and you've installed node js, you can start
+Once you have registered your bitcoin wallet, you have your exchange account with enough funds and you've installed node js, you can start
 
 **Clone the project locally**
 ```sh
-git clone github.com/0x13a/bitcoin-trading-dca && cd bitcoin-trading-dca
+git clone github.com/nearwood/bitcoin-trading-dca && cd bitcoin-trading-dca
 ```
 
 **Install the dependencies**

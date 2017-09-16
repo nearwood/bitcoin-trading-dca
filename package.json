@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/0x13a/bitcoin-trading-dca.git"
+    "url": "git+ssh://git@github.com/nearwood/bitcoin-trading-dca.git"
   },
   "keywords": [
     "bitcoin",
@@ -18,16 +18,18 @@
     "trading",
     "dollar",
     "cost",
-    "averaging"
+    "averaging",
+    "coinbase"
   ],
-  "author": "Diego Mariani <diego.mariani@mail.com>",
+  "author": "Diego Mariani <diego.mariani@mail.com> (https://github.com/0x13a/bitcoin-trading-dca)",
+  "contributors": ["Nick Earwood <nearwood@gmail.com> (https://nearwood.net)"],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/0x13a/bitcoin-trading-dca/issues"
+    "url": "https://github.com/nearwood/bitcoin-trading-dca/issues"
   },
-  "homepage": "https://github.com/0x13a/bitcoin-trading-dca#readme",
+  "homepage": "https://github.com/nearwood/bitcoin-trading-dca#readme",
   "dependencies": {
-    "dotenv": "^4.0.0",
-    "kraken-api": "^1.0.0"
+    "coinbase": "git+https://github.com/nearwood/coinbase-node.git",
+    "dotenv": "^4.0.0"
   }
 }
