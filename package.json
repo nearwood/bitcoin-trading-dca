@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/0x13a/bitcoin-trading-dca#readme",
   "dependencies": {
-    "coinbase": "^2.0.6",
+    "coinbase": "git+https://github.com/nearwood/coinbase-node.git",
     "dotenv": "^4.0.0"
   }
 }
