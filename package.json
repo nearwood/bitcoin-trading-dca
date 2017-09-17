@@ -18,8 +18,7 @@
     "trading",
     "dollar",
     "cost",
-    "averaging",
-    "coinbase"
+    "averaging"
   ],
   "author": "Diego Mariani <diego.mariani@mail.com>",
   "license": "ISC",
@@ -28,7 +27,7 @@
   },
   "homepage": "https://github.com/0x13a/bitcoin-trading-dca#readme",
   "dependencies": {
-    "coinbase": "^2.0.6",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "kraken-api": "^1.0.0"
   }
 }
