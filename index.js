@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const Coinbase = require('coinbase');
 const fs = require('fs');
+const EOL = require('os').EOL;
 const util = require('util');
 const timestamp = () => new Date().toISOString();
 
@@ -69,7 +70,7 @@ let account = process.env.ACCOUNT;
         }
         const logMessage = `[${timestamp()}] Buy ${volumeToBuy} ${cryptoCurrency} * ${price.amount} ${fiatCurrency}/${cryptoCurrency} = ${roundedInvestmentAmount} ${fiatCurrency}`;
         console.log(logMessage);
-        fs.appendFile('buy.log', logMessage, err => {
+        fs.appendFile('buy.log', logMessage + EOL, err => {
             if (err) {
                 console.error('An error has occured', err);
                 return;
@@ -86,11 +87,11 @@ let account = process.env.ACCOUNT;
         console.dir(tradeResponse);
         //console.log(util.format(`[${timestamp()}] Trade completed successfully: ${txIds}`));
     } catch (e) {
-        console.log(e);
+        console.error(e);
         // Log to file in case of failure
-        fs.appendFile('buy.log', util.format(`[${timestamp()}] Unable to perform operation: ${e}`), err => {
+        fs.appendFile('buy.log', `[${timestamp()}] Unable to perform operation: ${e}` + EOL, err => {
             if (err) {
-                console.log(err);
+                console.error("Unable to append error to log:", err);
             }
         });
     }
