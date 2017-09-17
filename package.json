@@ -22,7 +22,9 @@
     "coinbase"
   ],
   "author": "Diego Mariani <diego.mariani@mail.com> (https://github.com/0x13a/bitcoin-trading-dca)",
-  "contributors": ["Nick Earwood <nearwood@gmail.com> (https://nearwood.net)"],
+  "contributors": [
+    "Nick Earwood <nearwood@gmail.com> (https://nearwood.net)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nearwood/bitcoin-trading-dca/issues"

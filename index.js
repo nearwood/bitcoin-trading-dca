@@ -10,15 +10,25 @@ const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: proc
 
 const investmentAmount = process.env.INVESTMENT_AMOUNT;
 // see full list of exhange pairs here
-// https://api.kraken.com/0/public/AssetPairs
+// https://api.coinbase.com/v2/exchange-rates
 const pair = (process.env.ASSETS_PAIR || 'BTC-USD').toUpperCase();
 const pairSplit = pair.split('-');
-
 const cryptoCurrency = pairSplit[0];
 const fiatCurrency = pairSplit[1];
 
+const srcAccount = process.env.SOURCE_ACCOUNT;
+
 (async () => {
     try {
+        if (!srcAccount) {
+            const accounts = await client.getAccounts();
+            console.error("No account specified to use for buys. Available accounts:");
+            for (let i = 0; i < accounts.length; ++i) {
+                console.dir(accounts[i]);
+            }
+            return;
+        }
+
         const response = await client.getBuyPrice({currencyPair: pair});
 		const price = response.data; //TODO check for response.error or whatever
 		console.log(`${pair} @ ${price.amount} ${price.currency}`);
@@ -35,18 +45,18 @@ const fiatCurrency = pairSplit[1];
         const logMessage = util.format(`[${timestamp()}] Buying ${volumeToBuy} ${cryptoCurrency}`,
                                        `which is equal to ${roundedInvestmentAmount} ${fiatCurrency}`,
                                        `at price ${price.amount} ${fiatCurrency}/${cryptoCurrency}\n`);
-        // Log prices to file
+        
+        console.log(logMessage);
         fs.appendFile('buy.log', logMessage, err => {
             if (err) {
-                console.log('An error has occured');
-                console.log(err);
+                console.error('An error has occured', err);
                 return;
             }
         });
 
-		return ;
+		return;
 
-        // buy disposed amount for today
+        var account = client.getAccount('');
         const tradeResponse = await client.api('AddOrder', {
             pair,
             volume: volumeToBuy,
