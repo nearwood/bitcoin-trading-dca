@@ -1,13 +1,11 @@
 require('dotenv').config();
 
-
 const Coinbase = require('coinbase');
 const fs = require('fs');
 const EOL = require('os').EOL;
 const util = require('util');
-const timestamp = () => new Date().toISOString();
 
-const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET});
+const timestamp = () => new Date().toISOString();
 
 const investmentAmount = process.env.INVESTMENT_AMOUNT;
 // see full list of exhange pairs here
@@ -19,6 +17,8 @@ const fiatCurrency = pairSplit[1];
 
 let paymentMethod = process.env.PAYMENT_METHOD;
 let account = process.env.ACCOUNT;
+
+const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET});
 
 (async () => {
     try {
