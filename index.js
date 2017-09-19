@@ -28,8 +28,9 @@ const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: proc
             for (let i = 0; i < accounts.length; ++i) {
                 let a = accounts[i];
                 console.log(`Name: ${a.name}, primary: ${a.primary}, type: ${a.type}, currency: ${a.currency}, balance: ${a.balance.amount} id: ${a.id}`);
+                //console.dir(a);
             }
-            return;
+            return 1;
         } else {
             account = await client.getAccount(account);
             console.log(`Using account: ${account.name} - ${account.balance.amount} ${account.balance.currency} (${account.native_balance.amount} ${account.native_balance.currency})`);
@@ -45,15 +46,25 @@ const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: proc
             let m = paymentMethods[i];
             if (!paymentMethod) {
                 console.log(`Name: ${m.name}, type: ${m.type}, currency: ${m.currency}, id: ${m.id}`);
+                //console.dir(m);
             } else if (m.type == paymentMethod || m.id == paymentMethod) {
-                paymentMethod = m.id;
-                console.log(`Using payment method: ${m.type}, ${m.name}`);
+                paymentMethod = m;
+                if (m.allow_buy) {
+                    console.log(`Using payment method: ${m.type}, ${m.name}`);
+                } else {
+                    console.error(`Cannot buy with payment method: ${m.type}, ${m.name}`);
+                    console.error("Check your payment method type and/or balance.");
+                    // if (m.fiat_account && m.fiat_account.id === account.id) {
+                    //     console.error(`Linked account: ${account.name} - ${account.balance.amount} ${account.balance.currency} (${account.native_balance.amount} ${account.native_balance.currency})`);
+                    // }
+                    return 2;
+                }
                 //TODO Show balance if linked to account?
             }
         }
 
         if (!paymentMethod) {
-            return;
+            return 3;
         }
 
         const response = await client.getBuyPrice({currencyPair: pair});
@@ -80,7 +91,7 @@ const client = new Coinbase.Client({apiKey: process.env.API_KEY, apiSecret: proc
         const tradeResponse = await account.buy({
             amount: volumeToBuy,
             currency: cryptoCurrency,
-            payment_method: paymentMethod,
+            payment_method: paymentMethod.id,
             quote: true
         });
         
