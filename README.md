@@ -2,9 +2,28 @@
 
 Based off of: [0x13a's original Kraken version](https://github.com/0x13a/bitcoin-trading-dca)
 
-This version uses Coinbase's API.
-
 This node script let you set a daily amount to invest on crypto currency (Bitcoin in this case) via the [Coinbase crypto exchange](https://coinbase.com).
+
+This version uses Coinbase's API. Coinbase's fees make DCA cost-prohbitive for small amounts (less than $250 using ACH/fiat balance, or less than $80 with a credit card). See fee schedule below. Also consider using a credit card with cashback, if you can pay it off to avoid carrying a balance, you can significantly reduce the effective fees:
+
+| Amount  | ACH/Bank | ACH Fee | Credit Card | CC Fee | 3% Cashback |
+|---------|----------|---------|-------------|--------|---------------|
+| $10.00  | $0.99    | 9.90%   | $0.99       | 9.90%  | 6.90%         |
+| $20.00  | $1.49    | 7.45%   | $1.49       | 7.45%  | 4.45%         |
+| $40.00  | $1.99    | 4.98%   | $1.99       | 4.98%  | 1.98%         |
+| $50.00  | $1.99    | 3.98%   | $1.99       | 3.98%  | 0.98%         |
+| $60.00  | $2.99    | 4.98%   | $2.99       | 4.98%  | 1.98%         |
+| $75.00  | $2.99    | 3.99%   | $2.99       | 3.99%  | 0.99%         |
+| $80.00  | $2.99    | 3.74%   | $3.07       | 3.84%  | 0.84%         |
+| $100.00 | $2.99    | 2.99%   | $3.84       | 3.84%  | 0.84%         |
+| $150.00 | $2.99    | 1.99%   | $5.76       | 3.84%  | 0.84%         |
+| $162.50 | $2.99    | 1.84%   | $6.23       | 3.83%  | 0.83%         |
+| $175.00 | $2.99    | 1.71%   | $6.71       | 3.83%  | 0.83%         |
+| $187.50 | $2.99    | 1.59%   | $7.19       | 3.83%  | 0.83%         |
+| $200.00 | $2.99    | 1.50%   | $7.67       | 3.84%  | 0.84%         |
+| $250.00 | $3.72    | 1.49%   | $9.59       | 3.84%  | 0.84%         |
+
+You can also setup recurring buys from their website. However, this allows the same functionality and can keep better track of your average cost-per-coin over time.
 
 ### Dollar Cost Averaging
 
